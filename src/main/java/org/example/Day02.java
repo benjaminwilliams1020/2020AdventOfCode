@@ -79,4 +79,40 @@ public class Day02 {
         return validPassword;
     }
 
+    public int part2NumValidPasswords(String[] array) {
+        int numValidPasswords = 0;
+        for (int i = 0; i < array.length; i++) {
+            String str = array[i];
+            firstNumber = parseFirstNumber(str);
+            secondNumber = parseSecondNumber(str);
+            passwordKey = parsePasswordKey(str);
+            password = parsePassword(str);
+            boolean firstMatch = charAtPos1(password, firstNumber, passwordKey);
+            boolean secondMatch = charAtPos2(password, secondNumber, passwordKey);
+            if(firstMatch ^ secondMatch) {
+                numValidPasswords++;
+            }
+        }
+        return numValidPasswords;
+    }
+
+    public boolean charAtPos1(String thePassword, int numOne, char key) {
+        boolean sameCharAtPos1 = false;
+        char charAtPos1 = thePassword.charAt(numOne - 1);
+        if(charAtPos1 == key) {
+            sameCharAtPos1 = true;
+        }
+        return sameCharAtPos1;
+    }
+
+    public boolean charAtPos2(String thePassword, int numTwo, char key) {
+        boolean sameCharAtPos2 = false;
+        char charAtPos2 = thePassword.charAt(numTwo - 1);
+
+        if(charAtPos2 == key) {
+            sameCharAtPos2 = true;
+        }
+        return sameCharAtPos2;
+    }
+
 }

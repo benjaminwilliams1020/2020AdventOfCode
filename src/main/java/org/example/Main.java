@@ -10,7 +10,11 @@ public class Main {
         Day02 day02 = new Day02();
         int num = day02.numValidPasswords(DAY_02_INPUT);
         System.out.println("Day 2 Part 1 Answer: " + num);
+//      Answer: 396
 
+        int numPart2 = day02.part2NumValidPasswords(DAY_02_INPUT);
+        System.out.println("Day 2 Part 2 Answer: " + numPart2);
+//      Answer 428
 
 //        Day 1 Challenge
 //        Day01 day01 = new Day01();

@@ -8,6 +8,10 @@ public class Day02Tests {
     Day02 sut = new Day02();
 
     String testStringA = "12-20 t: ttttttltttvttttttttt";
+    String password = "ttttttltttvttttttttt";
+    char passwordKey = 't';
+    int firstNum = 12;
+    int secondNum = 20;
 
     @Test
     public void parse_first_number_from_test_string_A() {
@@ -90,5 +94,29 @@ public class Day02Tests {
 //        //Assert
 //        Assert.assertTrue(result);
 //    }
+
+    @Test
+    public void check_char_at_pos_1() {
+        //Arrange
+
+        //Act
+        boolean sameChar = sut.charAtPos1(password, firstNum, passwordKey);
+
+        //Assert
+        Assert.assertTrue(sameChar);
+
+    }
+
+    @Test
+    public void check_char_at_pos_2() {
+        //Arrange
+
+        //Act
+        boolean sameChar = sut.charAtPos2(password, secondNum, passwordKey);
+
+        //Assert
+        Assert.assertTrue(sameChar);
+
+    }
 
 }
