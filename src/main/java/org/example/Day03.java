@@ -30,18 +30,39 @@ public class Day03 {
         return numTreesHit;
     }
 
+    public int calculateTreesHit(String[] array, int position, int moveRight) {
+        int arrayPosition = 1;
+        String str = array[arrayPosition];
+        int strLength = str.length();
+        int numTreesHit = 0;
+        int stringPosition = 0;
+        char charAtPosition = ' ';
+        while(arrayPosition < array.length) {
+            int newPosition = position + moveRight;
+            if (newPosition >= strLength) {
+                newPosition = (newPosition - strLength);
+            }
+            charAtPosition = str.charAt(newPosition);
+            if (charAtPosition == '#') {
+                numTreesHit++;
+                arrayPosition++;
+            } else {
+                arrayPosition++;
+            }
+        }
+        return numTreesHit;
+    }
+
+//    not using this function - passes all Day03Tests
     public char moveHorizontalRight(String str, int position, int moveRight) {
         int strLength = str.length();
         int stringPosition = 0;
         char charAtPosition = ' ';
         int newPosition = position + moveRight;
         if(newPosition >= strLength) {
-            int remainder = (newPosition - strLength);
-            charAtPosition = str.charAt(remainder);
-            stringPosition = remainder;
-        } else {
-            charAtPosition = str.charAt(newPosition);
+            newPosition = (newPosition - strLength);
         }
+        charAtPosition = str.charAt(newPosition);
         return charAtPosition;
     }
 }

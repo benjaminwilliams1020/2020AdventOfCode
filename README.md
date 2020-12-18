@@ -1,1 +1,1 @@
-# 2020AdventOfCode
+This file contains my work on the Advent Of Code 2020 challenge (https://adventofcode.com/2020). I used this challenge for extra practice outside of my instruction at Tech Elevator. Much of my time during the challenge was spent on my Tech Elevator capstone project, but this was just some extra fun.
